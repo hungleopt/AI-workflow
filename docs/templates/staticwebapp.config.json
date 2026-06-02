@@ -1,0 +1,234 @@
+{
+  "trailingSlash": "auto",
+  "routes": [
+    {
+      "route": "/login",
+      "rewrite": "/.auth/login/aad",
+      "headers": {
+        "X-Robots-Tag": "noindex,nofollow,nocache,nosnippet,noarchive"
+      }
+    },
+    {
+      "route": "/.auth/login/{github,twitter}",
+      "statusCode": 404,
+      "headers": {
+        "X-Robots-Tag": "noindex,nofollow,nocache,nosnippet,noarchive"
+      }
+    },
+    {
+      "route": "/logout",
+      "redirect": "/.auth/logout",
+      "headers": {
+        "X-Robots-Tag": "noindex,nofollow,nocache,nosnippet,noarchive"
+      }
+    },
+    {
+      "route": "/favicon.*",
+      "headers": {
+        "Cache-Control": "public, max-age=86400, s-maxage=86400, immutable, stale-while-revalidate=31536000",
+        "Content-Security-Policy": ""
+      }
+    },
+    {
+      "route": "/40{0,1,2,3,4}",
+      "headers": {
+        "X-Robots-Tag": "noindex,nofollow,nocache,nosnippet,noarchive"
+      }
+    },
+    {
+      "route": "/40{0,1,2,3,4}.html",
+      "headers": {
+        "X-Robots-Tag": "noindex,nofollow,nocache,nosnippet,noarchive"
+      }
+    },
+    {
+      "route": "/offline.html",
+      "headers": {
+        "X-Robots-Tag": "noindex,nofollow,nocache,nosnippet,noarchive"
+      }
+    },
+    {
+      "route": "/export.html",
+      "headers": {
+        "X-Robots-Tag": "noindex,nofollow,nocache,nosnippet,noarchive"
+      }
+    },
+    {
+      "route": "/__images__/*",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, s-maxage=31536000, immutable, stale-while-revalidate=31536000",
+        "Content-Security-Policy": ""
+      }
+    },
+    {
+      "route": "/sw.js",
+      "headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Content-Security-Policy": ""
+      }
+    },
+    {
+      "route": "/*.{woff,woff2,ttf,otf,svg,css,js,ico}",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, s-maxage=31536000, immutable, stale-while-revalidate=31536000",
+        "Content-Security-Policy": ""
+      }
+    },
+    {
+      "route": "/assets/*.{woff,woff2,ttf,otf,svg,css,js,ico,png,jpg,jpeg,webp,gif,xml,xsl,json,yaml}",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, s-maxage=31536000, immutable, stale-while-revalidate=31536000",
+        "Content-Security-Policy": ""
+      }
+    },
+    {
+      "route": "/browserconfig.xml",
+      "headers": {
+        "Content-Security-Policy": ""
+      }
+    },
+    {
+      "route": "/atom.xml",
+      "headers": {
+        "Content-Security-Policy": ""
+      }
+    },
+    {
+      "route": "/manifest.json",
+      "headers": {
+        "Cache-Control": "public, max-age=86400, s-maxage=86400, immutable, stale-while-revalidate=31536000",
+        "Content-Security-Policy": ""
+      }
+    },
+    {
+      "route": "/sitemap.xml",
+      "headers": {
+        "Content-Security-Policy": "",
+        "X-Frame-Options": "",
+        "X-Content-Type-Options": "nosniff",
+        "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "*",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Max-Age": "86400",
+        "Vary": "Origin"
+      },
+      "allowedRoles": [
+        "administrator",
+        "tfm"
+      ]
+    },
+    {
+      "route": "/sitemap_index.xml",
+      "redirect": "/sitemap.xml",
+      "headers": {
+        "Content-Security-Policy": ""
+      },
+      "allowedRoles": [
+        "administrator",
+        "tfm"
+      ]
+    },
+    {
+      "route": "/icons/*",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, s-maxage=31536000, immutable, stale-while-revalidate=31536000",
+        "Content-Security-Policy": ""
+      }
+    },
+    {
+      "route": "/processed_snippets/*",
+      "statusCode": 301,
+      "redirect": "/"
+    },
+    {
+      "route": "/__shared__",
+      "statusCode": 301,
+      "redirect": "/"
+    },
+    {
+      "route": "/__shared__/*",
+      "headers": {
+        "X-Robots-Tag": "noindex,nofollow,nocache,nosnippet,noarchive"
+      }
+    },
+    {
+      "route": "/*.php",
+      "statusCode": 301,
+      "redirect": "/"
+    },
+    {
+      "route": "/.git/*",
+      "statusCode": 301,
+      "redirect": "/"
+    },
+    {
+      "route": "/*.{png,jpg,jpeg,gif,webp,tiff,mp4}",
+      "headers": {
+        "Cache-Control": "private, max-age=31536000, immutable, stale-while-revalidate=31536000",
+        "Content-Security-Policy": "default-src 'none'; font-src 'self' *.gstatic.com; img-src https: data: 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' *.googletagmanager.com; style-src 'self' 'unsafe-inline' *.googleapis.com *.disquscdn.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; connect-src 'self' *.google.com *.google.com.vn *.doubleclick.net *.privacymanager.io cloudflareinsights.com *.cloudflareinsights.com *.disqus.com; frame-src 'self' disqus.com *.doubleclick.net; manifest-src 'self';"
+      }
+    },
+    {
+      "route": "/",
+      "headers": {
+        "Cache-Control": "no-cache"
+      },
+      "allowedRoles": [
+        "administrator",
+        "tfm"
+      ]
+    },
+    {
+      "route": "/*",
+      "headers": {
+        "Cache-Control": "no-cache"
+      },
+      "allowedRoles": [
+        "administrator",
+        "tfm"
+      ]
+    }
+  ],
+  "responseOverrides": {
+    "400": {
+      "rewrite": "/400.html"
+    },
+    "401": {
+      "statusCode": 302,
+      "rewrite": "/401.html"
+    },
+    "403": {
+      "rewrite": "/403.html"
+    },
+    "404": {
+      "rewrite": "/404.html"
+    }
+  },
+  "mimeTypes": {
+    ".html": "text/html; charset=utf-8",
+    ".js": "text/javascript; charset=utf-8",
+    ".css": "text/css; charset=utf-8",
+    ".map": "text/plain; charset=utf-8",
+    ".json": "application/json; charset=utf-8",
+    ".ini": "text/plain; charset=utf-8",
+    ".ps1": "text/plain; charset=utf-8",
+    ".sh": "text/plain; charset=utf-8",
+    ".xml": "application/xml; charset=utf-8",
+    ".xsl": "application/xml; charset=utf-8"
+  },
+  "globalHeaders": {
+    "Content-Security-Policy": "default-src 'none'; font-src 'self' *.gstatic.com; img-src https: data: 'self'; object-src 'none'; script-src 'self' 'nonce-{{ config.nonce }}' 'unsafe-inline' 'strict-dynamic' https://tuyen.blog *.googletagmanager.com; style-src 'self' 'nonce-{{ config.nonce }}' *.disquscdn.com *.googleapis.com *.gstatic.com *.googletagmanager.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; connect-src 'self' *.google.com *.google.com.vn *.doubleclick.net cloudflareinsights.com *.cloudflareinsights.com *.privacymanager.io *.disqus.com; frame-src 'self' disqus.com *.doubleclick.net; manifest-src 'self';",
+    "Permissions-Policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+    "Access-Control-Max-Age": "86400",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Vary": "Origin",
+    "X-Robots-Tag": "noindex,nofollow,nocache,nosnippet,noarchive"
+  },
+  "platform": {
+    "apiRuntime": "node:18"
+  }
+}

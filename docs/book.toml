@@ -1,0 +1,38 @@
+[book]
+title = "FirstMile Internal Handbook"
+authors = ["GitHub Copilot"]
+description = "FirstMile References."
+language = "en"
+
+[build]
+build-dir = "book/"
+create-missing = false
+
+[output.html]
+# smart-punctuation = true
+additional-css = ["custom/style.css"]
+additional-js = ["custom/script.js"]
+no-section-label = true
+default-theme = "ayu"
+preferred-dark-theme = "ayu"
+# git-repository-url = "https://github.com/eshanoi"
+# git-repository-icon = "fa-github"
+# edit-url-template = "https://github.com/eshanoi"
+hash-files = true
+sidebar-header-nav = false
+
+[output.html.print]
+enable = true
+page-break = true # insert page-break after each chapter
+
+[output.html.fold]
+enable = false
+level = 2
+
+[output.html.playground]
+editable = false
+copy-js = true
+line-numbers = true
+
+[output.html.search]
+limit-results = 15
