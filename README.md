@@ -1,3 +1,3 @@
 # AI-workflow
 
-a test repo for testing AI
+A test repo for testing AI.
